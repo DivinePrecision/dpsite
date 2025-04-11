@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics & BI Solutions - Divine Precision</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gradient-bg-bi {
+            background: linear-gradient(135deg, #2563EB 0%, #7DD3FC 100%); /* Calming blue gradient */
+        }
+        .shadow-lg-custom {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <header class="bg-white dark:bg-gray-900 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center text-gray-900 dark:text-gray-100">
+                <span class="font-semibold text-xl tracking-tight text-indigo-600 dark:text-indigo-400 mr-2"></span>
+                <span class="font-semibold text-xl tracking-tight">Divine</span>
+                <span class="font-light text-xl tracking-tight ml-1">Precision</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="services.html" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 transition duration-200">Services</a>
+                <a href="solutions.html" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 transition duration-200">Solutions</a>
+                <a href="about.html" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 transition duration-200">About Us</a>
+                <a href="case-studies.html" class="text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 transition duration-200">Case Studies</a>
+                <a href="contact.html" class="text-indigo-600 font-semibold dark:text-indigo-400 transition duration-200">Contact Us</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="focus:outline-none rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 01-2 0v-1h-1a1 1 0 010-2h1V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-3-4h-2V2h2V6zM14 10a1 1 0 01-1 1h-1v1a1 1 0 01-2 0v-1h-1a1 1 0 010-2h1V7a1 1 0 012 0v1h1a1 1 0 011 1z"></path></svg>
+                </button>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:text-gray-300 dark:hover:text-indigo-400">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="services.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">Services</a>
+                <a href="solutions.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">Solutions</a>
+                <a href="about.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">About Us</a>
+                <a href="case-studies.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">Case Studies</a>
+                <a href="contact.html" class="block bg-indigo-50 text-indigo-700 hover:bg-indigo-100 py-2 px-3 rounded-md text-base font-medium dark:bg-indigo-700 dark:text-indigo-100 dark:hover:bg-indigo-600">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <header class="gradient-bg-bi py-24 text-white text-center relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-6 tracking-tight">Unlock Data Potential with Analytics & BI</h1>
+            <p class="text-xl opacity-80 mb-8">Drive informed decisions and achieve sustainable growth through our expert data solutions.</p>
+            <a href="contact.html" class="bg-white text-indigo-600 font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 text-lg">
+                Request a Free Data & BI Consultation
+            </a>
+        </div>
+        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 w-1/4 h-1/4 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce delay-150"></div>
+    </header>
+
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-12">Our Comprehensive Data Analytics & BI Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="service-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-8 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-500 dark:text-indigo-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7m-8 5h.01v-.01H12v.01M9 16h.01v-.01H9v.01m6 0h.01v-.01H15v.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Data Warehousing and Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Build a robust foundation for your data with our warehousing and seamless integration solutions.</p>
+                    <ul class="mt-2 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                        <li>ETL/ELT Processes</li>
+                        <li>Data Modeling</li>
+                        <li>Cloud Data Warehouses</li>
+                        <li>Data Lake Solutions</li>
+                        <li>API Integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-8 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-cyan-100 dark:bg-cyan-800 text-cyan-500 dark:text-cyan-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-2m3-2v-4M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Interactive Dashboards and Reporting</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Visualize key insights with dynamic dashboards and generate comprehensive reports.</p>
+                    <ul class="mt-2 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                        <li>Data Visualization</li>
+                        <li>KPI Tracking</li>
+                        <li>Custom Reporting</li>
+                        <li>Real-time Analytics</li>
+                        <li>Mobile BI</li>
+                    </ul>
+                </div>
+
+                <div class="service-card bg-white dark:bg-gray-700 rounded-xl shadow-md p-8 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-800 text-purple-500 dark:text-purple-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Predictive Modeling and Forecasting</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Anticipate future trends and make proactive decisions with our predictive analytics solutions.</p>
+                    <ul class="mt-2 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                        <li>Machine Learning Models</li>
+                        <li>Time Series Analysis</li>
+                        <li>Demand Forecasting</li>
+                        <li>Risk Assessment</li>
+                        <li>Customer Churn Prediction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="md:order-2">
+                    <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Visualize Your Business Insights</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                        Transform raw data into clear, actionable insights. Our interactive dashboards and reporting tools empower you to monitor key performance indicators, identify trends, and make data-driven decisions that fuel growth and efficiency.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-500 dark:text-indigo-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-2m3-2v-4M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Understand Key Performance Indicators (KPIs)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-cyan-100 dark:bg-cyan-800 text-cyan-500 dark:text-cyan-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Identify Trends and Patterns in Your Data</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-800 text-purple-500 dark:text-purple-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l-7-7 7-7m5 14l-7-7 7-7"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Forecast Future Outcomes and Plan Strategically</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-800 text-blue-500 dark:text-blue-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Make Data-Driven Decisions with Confidence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:order-1">
+                    <div class="relative rounded-lg shadow-xl overflow-hidden">
+                        <!-- <img src="https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Interactive Business Intelligence Dashboard" class="w-full h-auto object-cover"> -->
+                        <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Data Visualization Dashboard" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-indigo-500 opacity-20"></div>
+                        <div class="absolute top-4 left-4 bg-white text-indigo-500 font-semibold px-3 py-1 rounded-md shadow-sm text-sm">INSIGHTS</div>
+                    </div>
+                    <p class="text-center text-gray-500 dark:text-gray-400 mt-4 text-sm">A glimpse of your interactive BI dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 gradient-bg-bi text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 tracking-tight">Ready to Transform Your Data into Strategic Advantage?</h2>
+            <p class="text-xl opacity-80 mb-10">Our expert data analytics and BI team is ready to help you unlock the full potential of your data.</p>
+            <a href="contact.html" class="bg-white text-indigo-600 font-semibold py-4 px-12 rounded-full shadow-lg hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 text-lg">
+                Schedule a Free Data & BI Assessment
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-gray-200 dark:bg-gray-800 text-center text-gray-600 dark:text-gray-400">
+        <div class="container mx-auto px-6">
+            <p class="mb-2">&copy; 2025 Divine Precision. All rights reserved.</p>
+            <p class="text-sm">Your trusted Data Analytics & BI partner.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            });
+
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeToggleLightIcon.classList.remove('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+            }
+        }
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>

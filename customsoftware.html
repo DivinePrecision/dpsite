@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Software Development - Divine Precision</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gradient-bg-dev {
+            background: linear-gradient(135deg, #10B981 0%, #34D399 100%); /* Vibrant green gradient for development */
+        }
+        .shadow-lg-custom {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .service-feature:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+    <header class="bg-white dark:bg-gray-900 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center text-gray-900 dark:text-gray-100">
+                <span class="font-semibold text-xl tracking-tight text-green-600 dark:text-green-400 mr-2"></span>
+                <span class="font-semibold text-xl tracking-tight">Divine</span>
+                <span class="font-light text-xl tracking-tight ml-1">Precision</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="services.html" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 transition duration-200">Services</a>
+                <a href="solutions.html" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 transition duration-200">Solutions</a>
+                <a href="about.html" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 transition duration-200">About Us</a>
+                <a href="case-studies.html" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400 transition duration-200">Case Studies</a>
+                <a href="contact.html" class="text-green-600 font-semibold dark:text-green-400 transition duration-200">Contact Us</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="focus:outline-none rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 01-2 0v-1h-1a1 1 0 010-2h1V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-3-4h-2V2h2V6zM14 10a1 1 0 01-1 1h-1v1a1 1 0 01-2 0v-1h-1a1 1 0 010-2h1V7a1 1 0 012 0v1h1a1 1 0 011 1z"></path></svg>
+                </button>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 dark:text-gray-300 dark:hover:text-green-400">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="services.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">Services</a>
+                <a href="solutions.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">Solutions</a>
+                <a href="about.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">About Us</a>
+                <a href="case-studies.html" class="block text-gray-700 hover:bg-gray-100 py-2 px-3 rounded-md text-base font-medium dark:text-gray-300 dark:hover:bg-gray-700">Case Studies</a>
+                <a href="contact.html" class="block bg-green-50 text-green-700 hover:bg-green-100 py-2 px-3 rounded-md text-base font-medium dark:bg-green-700 dark:text-green-100 dark:hover:bg-green-600">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <header class="gradient-bg-dev py-24 text-white text-center relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-6 tracking-tight">Tailored Software Solutions for Your Unique Needs</h1>
+            <p class="text-xl opacity-80 mb-8">Build custom software that aligns perfectly with your business processes and provides a competitive edge.</p>
+            <a href="contact.html" class="bg-white text-green-600 font-semibold py-4 px-10 rounded-full shadow-lg hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 text-lg">
+                Discuss Your Custom Software Requirements
+            </a>
+        </div>
+        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 w-1/4 h-1/4 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-bounce delay-150"></div>
+    </header>
+
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-12">Our Custom Software Development Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="service-feature bg-white dark:bg-gray-700 rounded-xl shadow-md p-8 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-green-100 dark:bg-green-800 text-green-500 dark:text-green-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14m-9-3h-4m9-3h4m2 10h-2.5M5.5 13H9"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Web and Mobile Application Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Crafting responsive and user-friendly web and mobile applications tailored to your specific requirements.</p>
+                    <ul class="mt-2 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                        <li>Custom Web Applications</li>
+                        <li>Native and Cross-Platform Mobile Apps</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Progressive Web Apps (PWAs)</li>
+                        <li>UI/UX Design and Development</li>
+                    </ul>
+                </div>
+
+                <div class="service-feature bg-white dark:bg-gray-700 rounded-xl shadow-md p-8 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-teal-100 dark:bg-teal-800 text-teal-500 dark:text-teal-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Enterprise Software Solutions</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Building scalable and robust enterprise-level software to streamline your operations and enhance productivity.</p>
+                    <ul class="mt-2 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                        <li>CRM and ERP Systems</li>
+                        <li>Supply Chain Management Software</li>
+                        <li>Business Process Automation</li>
+                        <li>Data Management Platforms</li>
+                        <li>Legacy System Modernization</li>
+                    </ul>
+                </div>
+
+                <div class="service-feature bg-white dark:bg-gray-700 rounded-xl shadow-md p-8 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-500 dark:text-indigo-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4a2 2 0 012-2h4a2 2 0 012 2v1h.5a1 1 0 011 1l1 3a1 1 0 01-1 1h-1.5a1 1 0 01-1-1l-1-3a1 1 0 00-1-1h-3a1 1 0 00-1 1l-1 3a1 1 0 01-1 1H6.5a1 1 0 01-1-1l1-3a1 1 0 011-1H8V4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">API Integration and Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Seamlessly connect your existing systems and build custom APIs to enhance functionality and data flow.</p>
+                    <ul class="mt-2 text-sm text-gray-600 dark:text-gray-400 list-disc list-inside">
+                        <li>Third-Party API Integration</li>
+                        <li>Custom API Design and Development</li>
+                        <li>RESTful and GraphQL APIs</li>
+                        <li>API Security and Management</li>
+                        <li>Microservices Architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Unlock Your Business Potential with Tailored Software</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                        Don't settle for off-the-shelf software that doesn't quite fit. Our custom software development services provide solutions precisely engineered to your unique workflows, giving you a significant competitive advantage and driving efficiency.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8rounded-full bg-green-100 dark:bg-green-800 text-green-500 dark:text-green-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.523 5.754 18 7.5 18s3.332.523 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5S19.832 5.477 21 6.253v13c-1.168-.726-2.754-1.253-4.5-1.253s-3.332.527-4.5 1.253v-13z"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Solutions Tailored to Your Exact Requirements</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-800 text-teal-500 dark:text-teal-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 15h9v2H4v2h9l9-12v7"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Scalable and Flexible Software Architecture</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-500 dark:text-indigo-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3m-9-3h3m-13 5a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12z"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Seamless Integration with Existing Systems</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-800 text-blue-500 dark:text-blue-400 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Gain a Significant Competitive Advantage</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative rounded-lg shadow-xl overflow-hidden">
+                        <img src="https://plus.unsplash.com/premium_photo-1720287601920-ee8c503af775?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Custom Software Development Team" class="w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-green-500 opacity-20"></div>
+                        <div class="absolute top-4 left-4 bg-white text-green-500 font-semibold px-3 py-1 rounded-md shadow-sm text-sm">INNOVATION</div>
+                    </div>
+                    <p class="text-center text-gray-500 dark:text-gray-400 mt-4 text-sm">Turning your unique ideas into reality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 gradient-bg-dev text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-8 tracking-tight">Ready to Build Your Custom Software Solution?</h2>
+            <p class="text-xl opacity-80 mb-10">Let our expert development team create the perfect software to drive your business forward.</p>
+            <a href="contact.html" class="bg-white text-green-600 font-semibold py-4 px-12 rounded-full shadow-lg hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 text-lg">
+                Discuss Your Project
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-gray-200 dark:bg-gray-800 text-center text-gray-600 dark:text-gray-400">
+        <div class="container mx-auto px-6">
+            <p class="mb-2">&copy; 2025 Divine Precision. All rights reserved.</p>
+            <p class="text-sm">Your trusted Custom Software Development partner.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                document.documentElement.classList.toggle('dark');
+                themeToggleDarkIcon.classList.toggle('hidden');
+                themeToggleLightIcon.classList.toggle('hidden');
+                localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            });
+
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeToggleLightIcon.classList.remove('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+            }
+        }
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
