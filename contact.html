@@ -205,12 +205,16 @@
             const formResponse = document.getElementById('form-response');
 
             contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission immediately
+
                 formResponse.textContent = 'Sending your inquiry...';
                 formResponse.classList.remove('text-red-500', 'text-green-500', 'font-semibold');
 
-                // The form will now submit directly to Getform
-                // You can configure success/redirect behavior in your Getform account.
-                // Remove the fetch request as Getform will handle the submission.
+                // After a short delay (to show the "Sending..." message),
+                // manually submit the form to the URL in the 'action' attribute (Getform)
+                setTimeout(() => {
+                    contactForm.submit();
+                }, 1000); // Adjust the delay (in milliseconds) as needed
             });
         });
 
