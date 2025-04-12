@@ -152,7 +152,7 @@
             <div class="bg-white rounded-lg shadow-xl overflow-hidden md:max-w-3xl mx-auto">
                 <div class="p-6">
                     <h2 class="text-xl font-semibold text-gray-900 mb-4 text-center">How Can We Help You?</h2>
-                    <form id="contactForm" class="space-y-4">
+                    <form id="contactForm" class="space-y-4" action="https://getform.io/f/azywexdb" method="POST">
                         <div>
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-1">Your Name</label>
                             <input type="text" id="name" name="name"
@@ -205,32 +205,12 @@
             const formResponse = document.getElementById('form-response');
 
             contactForm.addEventListener('submit', function(event) {
-                event.preventDefault();
+                formResponse.textContent = 'Sending your inquiry...';
+                formResponse.classList.remove('text-red-500', 'text-green-500', 'font-semibold');
 
-                const formData = new FormData(contactForm);
-
-                fetch('/submit-inquiry', { // The endpoint defined in your Flask app
-                    method: 'POST',
-                    body: formData, // Send as form data
-                })
-                .then(response => response.json())
-                .then(data => {
-                    formResponse.textContent = data.message;
-                    if (data.success) {
-                        formResponse.classList.remove('text-red-500');
-                        formResponse.classList.add('text-green-500', 'font-semibold');
-                        contactForm.reset();
-                    } else {
-                        formResponse.classList.remove('text-green-500', 'font-semibold');
-                        formResponse.classList.add('text-red-500');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error sending inquiry:', error);
-                    formResponse.textContent = 'There was a network error. Please try again later.';
-                    formResponse.classList.remove('text-green-500', 'font-semibold');
-                    formResponse.classList.add('text-red-500');
-                });
+                // The form will now submit directly to Getform
+                // You can configure success/redirect behavior in your Getform account.
+                // Remove the fetch request as Getform will handle the submission.
             });
         });
 
