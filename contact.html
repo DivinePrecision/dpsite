@@ -237,34 +237,47 @@
 
     <script>
         $(document).ready(function() {
-            $("#contactForm").submit(function(e){
-                e.preventDefault();
-                var action = $(this).attr("action");
-                var data = {};
-                $(this).serializeArray().map(function(x){data[x.name] = x.value;});
-                $("#submitButton").prop('disabled', true).text('Sending...'); // Disable button and show sending status
-                $("#form-response").hide(); // Hide initial response message
-                $("#errorMessage").hide(); // Ensure error message is hidden
+    $("#contactForm").submit(function(e){
+        e.preventDefault();
+        var action = $(this).attr("action");
+        var data = {};
+        $(this).serializeArray().map(function(x){data[x.name] = x.value;});
+        $("#submitButton").prop('disabled', true).text('Sending...');
+        $("#form-response").hide();
+        $("#errorMessage").hide();
 
-                $.ajax({
-                    type: "POST",
-                    url: action,
-                    data: JSON.stringify(data),
-                    contentType: "application/json",
-                    headers: {
-                        "Accept": "application/json"
-                    }
-                }).done(function() {
-                    $("#contactForm").slideUp(300, function() {
-                        $("#thankYouMessage").slideDown(300);
-                        $("#submitButton").prop('disabled', false).text('Send Your Inquiry'); // Re-enable button
-                    });
-                }).fail(function() {
-                    $("#errorMessage").slideDown(300);
-                    $("#submitButton").prop('disabled', false).text('Send Your Inquiry'); // Re-enable button
+        $.ajax({
+            type: "POST",
+            url: action,
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            headers: {
+                "Accept": "application/json"
+            },
+            // Prevent jQuery from automatically following redirects
+            beforeSend: function(xhr) {
+                xhr.overrideMimeType("text/plain; charset=x-user-defined");
+            }
+        }).done(function(response, textStatus, jqXHR) {
+            // Check the status code - successful responses are usually 2xx
+            if (jqXHR.status >= 200 && jqXHR.status < 300) {
+                $("#contactForm").slideUp(300, function() {
+                    $("#thankYouMessage").slideDown(300);
+                    $("#submitButton").prop('disabled', false).text('Send Your Inquiry');
                 });
-            });
+            } else {
+                // If it's not a successful submission (could be a redirect response)
+                console.warn("Potential redirect response:", jqXHR);
+                $("#errorMessage").slideDown(300);
+                $("#submitButton").prop('disabled', false).text('Send Your Inquiry');
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.error("AJAX error:", textStatus, errorThrown, jqXHR);
+            $("#errorMessage").slideDown(300);
+            $("#submitButton").prop('disabled', false).text('Send Your Inquiry');
         });
+    });
+});
 
         // Get the service parameter from the URL (if needed to pre-fill or track)
         const urlParams = new URLSearchParams(window.location.search);
